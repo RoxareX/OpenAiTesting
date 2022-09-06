@@ -1,0 +1,17 @@
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\OpenAiTesting.exe
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\OpenAiTesting.deps.json
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\OpenAiTesting.runtimeconfig.json
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\OpenAiTesting.dll
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\OpenAiTesting.pdb
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\Newtonsoft.Json.dll
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\OpenAiTesting.csproj.AssemblyReference.cache
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\OpenAiTesting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\OpenAiTesting.AssemblyInfoInputs.cache
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\OpenAiTesting.AssemblyInfo.cs
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\OpenAiTesting.csproj.CoreCompileInputs.cache
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\OpenAiTesting.csproj.CopyComplete
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\OpenAiTesting.dll
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\refint\OpenAiTesting.dll
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\OpenAiTesting.pdb
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\OpenAiTesting.genruntimeconfig.cache
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\ref\OpenAiTesting.dll

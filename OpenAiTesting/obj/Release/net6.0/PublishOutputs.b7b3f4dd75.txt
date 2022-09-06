@@ -1,0 +1,6 @@
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\publish\OpenAiTesting.exe
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\publish\OpenAiTesting.dll
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\publish\OpenAiTesting.deps.json
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\publish\OpenAiTesting.runtimeconfig.json
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\publish\OpenAiTesting.pdb
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\publish\Newtonsoft.Json.dll

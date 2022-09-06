@@ -1,0 +1,6 @@
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\OpenAiTesting.exe
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\OpenAiTesting.dll
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\OpenAiTesting.deps.json
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\OpenAiTesting.runtimeconfig.json
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\OpenAiTesting.pdb
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\Newtonsoft.Json.dll
