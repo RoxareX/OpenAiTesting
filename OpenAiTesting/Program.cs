@@ -65,7 +65,7 @@ void Asnwer(string text)
 
 // Variables
 string answer = "";
-string path = "C:\\Users\\RoxareX\\source\\repos\\OpenAiTesting\\OpenAiTesting\\Saved.txt";
+string path = "Saved.txt";
 
 // Commands
 var help = @"Help - Shows every command.
@@ -95,8 +95,19 @@ while (true)
     // OpenAI
     Console.ForegroundColor = ConsoleColor.Gray;
     string beforeanswer = answer;
-    char Char = question[0];
-    string firstChar = Char.ToString();
+    var Character = '/';
+    try
+    {
+        Character = question[0];
+    }
+    catch (Exception ex)
+    {
+        Console.ForegroundColor= ConsoleColor.Red;
+        Console.Error.WriteLine(ex.Message);
+        Console.Error.WriteLine("Input empty. \n");
+    }
+
+    string firstChar = Character.ToString();
     if (!firstChar.Equals("/"))
     {
         answer = callOpenAI(150, question, "text-davinci-002", 0.7, 1, 0, 0);
@@ -107,10 +118,8 @@ while (true)
     // Commands
     else if (question == "/help")
     {
-        Console.WriteLine("");
-
         // Shows all commands
-        Console.WriteLine(help);
+        Console.WriteLine("\n" + help);
 
         Console.WriteLine("");
     }
