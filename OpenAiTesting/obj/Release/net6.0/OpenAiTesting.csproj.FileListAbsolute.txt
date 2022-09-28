@@ -15,3 +15,4 @@ C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\ref
 C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\OpenAiTesting.pdb
 C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\OpenAiTesting.genruntimeconfig.cache
 C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Release\net6.0\ref\OpenAiTesting.dll
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Release\net6.0\HtmlAgilityPack.dll

@@ -15,3 +15,4 @@ C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Debug\net6.0\OpenA
 C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Debug\net6.0\ref\OpenAiTesting.dll
 C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\obj\Debug\net6.0\OpenAiTesting.csproj.CopyComplete
+C:\Users\RoxareX\source\repos\OpenAiTesting\OpenAiTesting\bin\Debug\net6.0\HtmlAgilityPack.dll

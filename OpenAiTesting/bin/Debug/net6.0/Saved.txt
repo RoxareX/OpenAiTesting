@@ -1,1 +1,6 @@
+(
+, 
 
+WebClient wc = new WebClient();
+string website = wc.DownloadString("http://www.google.com");
+Console.WriteLine(website);)
