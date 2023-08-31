@@ -1,11 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "Agj7Kpb3+j4HZH5xs4EI9ehEo11jBAJ/EAYGZv4bPqi5BZfbCqKQ4y4Q3Ebn+3tRAaWwm5apPpKyQUsHlDPkgg==",
+  "dgSpecHash": "kSeBVBkE+NCetCvxLOqLzhEtuSn83kqM3FkE4oodlOQuwT7KzQ+/3+LRJWmJ8E+62Oc/Gy2nrxk/14a1KhnFbw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\RoxareX\\source\\repos\\OpenAiTesting\\OpenAiTesting\\OpenAiTesting.csproj",
+  "projectFilePath": "C:\\Users\\fragi\\source\\repos\\OpenAiTesting\\OpenAiTesting\\OpenAiTesting.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\RoxareX\\.nuget\\packages\\htmlagilitypack\\1.11.46\\htmlagilitypack.1.11.46.nupkg.sha512",
-    "C:\\Users\\RoxareX\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\fragi\\.nuget\\packages\\htmlagilitypack\\1.11.52\\htmlagilitypack.1.11.52.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\microsoft.extensions.configuration\\2.1.0\\microsoft.extensions.configuration.2.1.0.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.1.0\\microsoft.extensions.configuration.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\microsoft.extensions.configuration.binder\\2.1.0\\microsoft.extensions.configuration.binder.2.1.0.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\microsoft.extensions.http\\2.1.0\\microsoft.extensions.http.2.1.0.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\microsoft.extensions.logging\\2.1.0\\microsoft.extensions.logging.2.1.0.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.1.0\\microsoft.extensions.logging.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\microsoft.extensions.options\\2.1.0\\microsoft.extensions.options.2.1.0.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\microsoft.extensions.primitives\\2.1.0\\microsoft.extensions.primitives.2.1.0.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\openai\\1.7.2\\openai.1.7.2.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
+    "C:\\Users\\fragi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

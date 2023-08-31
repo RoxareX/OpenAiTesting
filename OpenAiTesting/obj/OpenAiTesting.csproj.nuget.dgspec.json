@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RoxareX\\source\\repos\\OpenAiTesting\\OpenAiTesting\\OpenAiTesting.csproj": {}
+    "C:\\Users\\fragi\\source\\repos\\OpenAiTesting\\OpenAiTesting\\OpenAiTesting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RoxareX\\source\\repos\\OpenAiTesting\\OpenAiTesting\\OpenAiTesting.csproj": {
+    "C:\\Users\\fragi\\source\\repos\\OpenAiTesting\\OpenAiTesting\\OpenAiTesting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RoxareX\\source\\repos\\OpenAiTesting\\OpenAiTesting\\OpenAiTesting.csproj",
+        "projectUniqueName": "C:\\Users\\fragi\\source\\repos\\OpenAiTesting\\OpenAiTesting\\OpenAiTesting.csproj",
         "projectName": "OpenAiTesting",
-        "projectPath": "C:\\Users\\RoxareX\\source\\repos\\OpenAiTesting\\OpenAiTesting\\OpenAiTesting.csproj",
-        "packagesPath": "C:\\Users\\RoxareX\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RoxareX\\source\\repos\\OpenAiTesting\\OpenAiTesting\\obj\\",
+        "projectPath": "C:\\Users\\fragi\\source\\repos\\OpenAiTesting\\OpenAiTesting\\OpenAiTesting.csproj",
+        "packagesPath": "C:\\Users\\fragi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fragi\\source\\repos\\OpenAiTesting\\OpenAiTesting\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\RoxareX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fragi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,11 +42,15 @@
           "dependencies": {
             "HtmlAgilityPack": {
               "target": "Package",
-              "version": "[1.11.46, )"
+              "version": "[1.11.52, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.1, )"
+              "version": "[13.0.3, )"
+            },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[1.7.2, )"
             }
           },
           "imports": [
@@ -65,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
