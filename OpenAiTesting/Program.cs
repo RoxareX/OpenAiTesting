@@ -1,225 +1,181 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System.Reflection.Metadata.Ecma335;
-using HtmlAgilityPack;
-using Newtonsoft.Json;
-using System.Globalization;
+﻿using System;
+using System.IO;
 using System.Net;
-using System.Net.Http.Headers;
-using System.Reflection.Metadata;
+using System.Threading.Tasks;
+using HtmlAgilityPack;
 using OpenAI_API;
+using OpenAI_API.Chat;
+using OpenAI_API.Models;
+using OpenAI_API.Moderation;
 
-try
+class Program
 {
-
-
-    string strAPI = "";
-    try
+    static async Task Main(string[] args)
     {
-        var API = System.IO.File.ReadAllText("API.txt");
-        strAPI = API.ToString();
-    }
-    catch (Exception ex)
-    {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.Error.WriteLine("\n" + ex.Message);
-        Console.WriteLine("Please create an API.txt file in the same folder as the application .exe . \n");
-    }
+        string strAPI = "";
 
-    // ChatGPT
-    OpenAIAPI api = new OpenAIAPI(new APIAuthentication(strAPI));
-    var chat = api.Chat.CreateConversation();
-
-    // Functions
-    void Save(string text, string path)
-    {
-        if (File.Exists(path))
+        try
         {
-            var reader = System.IO.File.ReadAllText(path);
-
-            StreamWriter sw = new StreamWriter(path);
-            sw.WriteLine((reader, text));
-            sw.Close();
-            Console.WriteLine("Saved.");
+            var API = File.ReadAllText("API.txt");
+            strAPI = API.ToString();
         }
-        else
+        catch (Exception ex)
         {
-            var create = System.IO.File.CreateText(path);
-            create.Close();
-            Console.WriteLine("Created.");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Error.WriteLine("\n" + ex.Message);
+            Console.WriteLine("Please create an API.txt file in the same folder as the application .exe . \n");
         }
-    }
 
-    void Answer(string text)
-    {
-        Console.WriteLine(text);
-        Console.WriteLine("");
-    }
+        // ChatGPT
+        OpenAIAPI api = new OpenAIAPI(new APIAuthentication(strAPI));
+        var chat = api.Chat.CreateConversation();
 
-    // Variables
-    string answer = "";
-    string path = "Saved.txt";
-    string version = "OpenAiConsole-Private 1.3";
-    string error = "Technical error: ";
 
-    // Commands
-    var help = @"/Help - Shows every command.
+        void Save(string text, string path)
+        {
+            if (File.Exists(path))
+            {
+                var reader = File.ReadAllText(path);
+
+                StreamWriter sw = new StreamWriter(path);
+                sw.WriteLine(reader + text); // Append text to the existing file content
+                sw.Close();
+                Console.WriteLine("Saved.");
+            }
+            else
+            {
+                var create = File.CreateText(path);
+                create.WriteLine(text); // Write text to the new file
+                create.Close();
+                Console.WriteLine("Created.");
+            }
+        }
+
+        void Answer(string text)
+        {
+            Console.WriteLine(text);
+            Console.WriteLine("");
+        }
+
+        string answer = "";
+        string path = "Saved.txt";
+        string version = "OpenAiConsole-Private 1.3";
+        string error = "Technical error: ";
+
+        var help = @"/Help - Shows every command.
 /Quit - Quits the application.
 /Exit - Exits the application.
 /Clear - Clears the .txt file.
 /Save - Saves the last OpenAI printed answer to .txt
 /Cat - Lists the .txt file.
 /Open - Opens the .txt file in notepad.
-/v or /version - Shows the apps version.
+/v or /version - Shows the app's version.
 /lv or /latestversion - Shows the latest version of the app.";
 
-
-    Console.ForegroundColor = ConsoleColor.Green;
-    Console.WriteLine("If you want to quit just type: '/quit or /exit.");
-    Console.WriteLine("For more info type: /help");
-    while (true)
-    {
-        // Code Beggining
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("Ask anything:");
-        var question = Console.ReadLine();
-        if (question == "/quit")
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("If you want to quit just type: '/quit or /exit.");
+        Console.WriteLine("For more info type: /help");
+        while (true)
         {
-            break;
-        }
-        if (question == "/exit")
-        {
-            break;
-        }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Ask anything:");
+            var question = Console.ReadLine();
+            if (question == "/quit")
+            {
+                break;
+            }
+            if (question == "/exit")
+            {
+                break;
+            }
 
-        // OpenAI
-        Console.ForegroundColor = ConsoleColor.Gray;
-        string beforeanswer = answer;
-        var Character = '/';
-        try
-        {
-            Character = question[0];
-        }
-        catch (Exception ex)
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Error.WriteLine(ex.Message);
-            Console.Error.WriteLine(error + "Input empty. \n");
-        }
-
-        string firstChar = Character.ToString();
-        if (!firstChar.Equals("/"))
-        {
-            // answer = callOpenAI(300, question, "text-davinci-002", 0.7, 1, 0, 0, strAPI);
-            //chat.AppendUserInput("Testing");
-            //answer = await chat.GetResponseFromChatbotAsync();
-
-
-            //Asnwer(answer);
-
-            chat.AppendUserInput(question);
-
+            Console.ForegroundColor = ConsoleColor.Gray;
+            string beforeanswer = answer;
+            var Character = '/';
             try
             {
-                answer = await chat.GetResponseFromChatbotAsync();
-                Answer(answer);
+                Character = question[0];
             }
             catch (Exception ex)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Error.WriteLine("\n" + ex.Message);
+                Console.Error.WriteLine(ex.Message);
+                Console.Error.WriteLine(error + "Input empty. \n");
             }
-        }
 
-        // Commands
-        else if (question == "/help")
-        {
-            // Shows all commands
-            Console.WriteLine("\n" + help);
-
-            Console.WriteLine("");
-        }
-        else if (question == "/clear")
-        {
-            StreamWriter sw = new StreamWriter(path);
-            sw.WriteLine("");
-            sw.Close();
-            Console.WriteLine("Cleared.");
-        }
-        else if (question == "/save")
-        {
-            Save(beforeanswer, path);
-        }
-        else if (question == "/cat")
-        {
-            StreamReader sr = new StreamReader(path);
-            string text = sr.ReadToEnd();
-            sr.Close();
-
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine(text);
-
-        }
-        else if (question == "/open")
-        {
-            // open folder
-            System.Diagnostics.Process.Start("notepad.exe", path);
-        }
-        else if (question == "/v")
-        {
-            Console.WriteLine("Version: " + version);
-        }
-        else if (question == "/version")
-        {
-            Console.WriteLine("Version: " + version);
-        }
-        else if (question == "/lv")
-        {
-            try
+            string firstChar = Character.ToString();
+            if (!firstChar.Equals("/"))
             {
-                // Gets the elements of the website
-                WebClient wc = new WebClient();
-                string website = wc.DownloadString("https://github.com/RoxareX/OpenAiTesting/releases/latest");
+                //chat.AppendUserInput(question);
+                chat.AppendUserInput("How to make a hamburger?");
 
-                // Lists the specified element
-                var doc = new HtmlDocument();
-                doc.LoadHtml(website);
-                foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//h1"))
+                try
                 {
-                    Console.WriteLine("Version: " + node.InnerHtml);
+                    await chat.StreamResponseFromChatbotAsync(res =>
+                    {
+                        Console.Write(res);
+                    });
+                }
+                catch (Exception ex)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Error.WriteLine("\n" + ex.Message);
                 }
             }
-            catch (Exception ex)
+            else if (question == "/help")
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Error.WriteLine("\n" + ex.Message);
-                Console.Error.WriteLine(error + "The website is private. \n");
+                Console.WriteLine("\n" + help);
+                Console.WriteLine("");
             }
-        }
-        else if (question == "/latestversion")
-        {
-            try
+            else if (question == "/clear")
             {
-                // Gets the elements of the website
-                WebClient wc = new WebClient();
-                string website = wc.DownloadString("https://github.com/RoxareX/OpenAiTesting/releases/latest");
+                StreamWriter sw = new StreamWriter(path);
+                sw.WriteLine("");
+                sw.Close();
+                Console.WriteLine("Cleared.");
+            }
+            else if (question == "/save")
+            {
+                Save(beforeanswer, path);
+            }
+            else if (question == "/cat")
+            {
+                StreamReader sr = new StreamReader(path);
+                string text = sr.ReadToEnd();
+                sr.Close();
 
-                // Lists the specified element
-                var doc = new HtmlDocument();
-                doc.LoadHtml(website);
-                foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//h1"))
-                {
-                    Console.WriteLine("Version: " + node.InnerHtml);
-                }
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine(text);
             }
-            catch (Exception ex)
+            else if (question == "/open")
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Error.WriteLine("\n" + ex.Message);
-                Console.Error.WriteLine(error + "The website is private. \n");
+                System.Diagnostics.Process.Start("notepad.exe", path);
+            }
+            else if (question == "/v" || question == "/version")
+            {
+                Console.WriteLine("Version: " + version);
+            }
+            else if (question == "/lv" || question == "/latestversion")
+            {
+                try
+                {
+                    WebClient wc = new WebClient();
+                    string website = wc.DownloadString("https://github.com/RoxareX/OpenAiTesting/releases/latest");
+
+                    var doc = new HtmlDocument();
+                    doc.LoadHtml(website);
+                    foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//h1"))
+                    {
+                        Console.WriteLine("Version: " + node.InnerHtml);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Error.WriteLine("\n" + ex.Message);
+                    Console.Error.WriteLine(error + "The website is private. \n");
+                }
             }
         }
     }
-} catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
 }
